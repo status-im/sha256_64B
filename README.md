@@ -12,11 +12,11 @@ You could then do an out-of-tree test by
 ```
     cp -pr tests /tmp
     cd /tmp/tests
-    nim c bench
-    ./bench a28
+    nim r --cc:gcc tests/autoselect.nim
+dig: [[245, 165, 253, 66, 209, 106, 32, 48, 39, 152, 239, 110, 211, 9, 151, 155, 67, 0, 61, 35, 32, 217, 240, 232, 234, 152, 49, 169, 39, 89, 251, 75]]
 ```
-(On Windows you may need to use a very large `-b=` to get a long enough test
-for meaningful times.)
+(If you have cligen installed then you can also compile tests/bench. On Windows,
+you may need a large `-b=` to get a long enough test for meaningful times.)
 
 ## Supported platforms
 
