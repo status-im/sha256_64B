@@ -100,4 +100,5 @@ proc sha256_64Bs(o: pua Digest, i: pua Block64, bN: int) =
 proc sha256_64Bs*(o: var seq[Digest], i: openArray[Block64]) =
   ## A high level batch interface to SHA256 hashing of `bN` 64 Byte blocks.
   o.setLen i.len
-  sha256_64Bs cast[pua Digest](o[0].addr), cast[pua Block64](i[0].addr), i.len
+  sha256_64Bs cast[pua Digest](o[0].addr), cast[pua Block64](i[0].unsafeAddr),
+              i.len
